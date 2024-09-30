@@ -1,0 +1,403 @@
+@charset "UTF-8";
+
+
+*{
+    padding: 0px;
+    margin: 0px;
+}
+/* formatação cadastro*/ 
+
+form#cadastrar{
+    left: 900px;
+    position: absolute;
+    top: 300px;
+    font-size: 40px;
+    
+}
+
+/* formatação do login */
+form#login{
+    left: 600px;
+    position: absolute;
+    top: 200px;
+}
+
+form#botao1{
+    text-align: center;
+    top: 40px;
+}
+
+form#botao10{
+    position: absolute;
+    top: 10px;
+    
+}
+
+
+/*formatação dos avisos de cadastro */
+div#msg-sucesso{
+    left: 550px;
+    position: absolute;
+    top: 350px;
+    font-size: 15px;
+}
+
+div#msg-sucesso123{
+    left: 600px;
+    position: absolute;
+    top: 220px;
+    font-size: 15px;
+}
+div#msg-123{
+    left: 550px;
+    position: absolute;
+    top: 10px;
+    font-size: 15px;
+}
+
+div#msg-jacadastrado1{
+    left: 900px;
+    position: absolute;
+    top: 386px;
+    font-size: 15px;
+    color:rgb(211, 211, 211)
+
+}
+
+div#msg-jacadastrado{
+    left: 600px;
+    position: absolute;
+    top: 498px;
+    font-size: 15px;
+}
+
+div#msg-jacadastrado2{
+    left: 600px;
+    position: absolute;
+    top: 313px;
+    font-size: 15px;
+}
+
+div#msg-3{
+    left: 600px;
+    position: absolute;
+    top: 498px;
+    font-size: 15px;
+}
+
+
+
+
+div#msg-removido{
+    left: 600px;
+    position: absolute;
+    top: 498px;
+    font-size: 15px;
+}
+
+div#msg-jatacadastrado1{
+    left: 600px;
+    position: absolute;
+    top: 222px;
+    font-size: 15px;
+}
+
+
+
+
+.msg-erro{
+    position: absolute;
+    top: 200px;
+    left: 400px;
+}
+
+/* formatação do menu padrão */
+
+nav#menu{
+    display: block;
+    position: absolute;
+    top: 20px;
+    left: 30px;
+}
+
+nav#menu ul{
+    list-style: none;
+    position: absolute;
+
+}
+
+nav#menu li{
+    
+    
+    border-radius: 6px;
+    background-color: white;
+    background-position: top;
+    border: none;
+    padding: 15px;
+    font-size: 25px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: darkgrey;
+
+}
+
+nav#menu li:hover{
+    background-color: rgb(211, 211, 211);
+}
+
+nav#menu h1{
+    display: none;
+}
+
+nav#menu a{
+
+    color: black;
+    text-decoration: none;
+}
+
+/* formtação dos icones */
+
+div#icone1{
+    position: absolute;
+    top: 13px;
+    left: 700px;
+    display: inline-block;
+}
+
+div#icone1:hover{
+    -moz-box-shadow: 0 0 10px #ccc;
+      -webkit-box-shadow: 0 0 10px #ccc;
+      box-shadow: 0 0 10px #ccc;
+}
+div#icone2{
+    position: absolute;
+    top: 8px;
+    left: 810px;
+    display: inline-block;
+    font-size: 100%;
+}
+div#icone2:hover{
+    -moz-box-shadow: 0 0 10px #ccc;
+      -webkit-box-shadow: 0 0 10px #ccc;
+      box-shadow: 0 0 10px #ccc;
+}
+div#icone3{
+    position: absolute;
+    top: 13px;
+    left: 930px;
+    display: inline-block;
+}
+div#icone3:hover{
+    -moz-box-shadow: 0 0 10px #ccc;
+      -webkit-box-shadow: 0 0 10px #ccc;
+      box-shadow: 0 0 10px #ccc;
+}
+/*formatação da estrutura de fundo */
+
+div#banerprincipal{
+    position: absolute;
+    top: 15px;
+    left: 65px;
+}
+
+.baner{
+    position: absolute;
+    top: 15px;
+    left: 65px;
+}
+
+.baner_login{
+    object-fit: cover;
+    position: relative;
+
+}
+
+
+/* formatação da tabela dos usuários */
+
+.tabela{
+    position: absolute;
+    top: 140px;
+    left: 325px;
+    text-transform: uppercase;
+    border-spacing: 0px;
+    border-collapse: separate;
+    margin: 0 auto;
+    color: #595c62;
+    font-size: 0.6em;
+    font-family: 'verdana';
+    text-align: center;
+    width: 150%;
+    display: block;
+
+}
+
+#nova_tabela{
+    position: absolute;
+    top: 250px;
+    left: 325px;
+    font-size: 100px;
+    width: 500%;
+}
+
+tr {
+    height: 35px;
+  }
+
+
+
+input#botao{
+    background-color: darkgrey;
+}
+/*formatação dos nomes das escruturas */
+
+
+
+
+
+/*formtação de usuarios */
+
+div#nomeusuarios{
+    position: absolute;
+    top: 25px;
+    left: 330px;
+}
+
+
+div#nomevalidade{
+    position: absolute;
+    top: 25px;
+    left: 700px;
+}
+
+div#nomerelatorio{
+    position: absolute;
+    top: 300px;
+    left: 350px;
+    width: 75%;
+}
+
+/*formtação de gerenciamento de produtos */
+
+div#nomeprodutos{
+    position: absolute;
+    top: 25px;
+    left: 330px;
+}
+
+div#botao1{
+    color: brown;
+}
+
+
+/* formatação de sair do sistema */
+
+.botao_sair{
+    position: absolute;
+    left: 1470px;
+    top: 15px;
+    font-size: large;
+    font-family: Verdana;
+    text-decoration: none;
+}
+
+.titulo_login{
+    position: absolute;
+    left: 5%;
+    top: 10%;
+    color: rgb(255, 255, 255);
+    font-family:'Verdana';
+
+}
+
+#tabela_nova2{
+    position: absolute;
+    top: 250px;
+    left: 325px;
+}
+
+#botao_editar{
+    background-color: #396acb;
+    color:rgb(255, 255, 255);
+    border-radius: 8%;
+    padding: 8px;
+    text-decoration: none;
+  
+}
+
+#botao_excluir{
+    background-color: #cb3943;
+    color:rgb(255, 255, 255);
+    border-radius: 8%;
+    padding: 8px;
+    text-decoration: none;
+}
+
+#tabela_nova3{
+    width: 60%;
+  
+}
+
+tr#titulo{
+    background-color: #ffffff;
+    font-weight: bold;
+    
+}
+
+tr#conteudo{
+    background-color: #f6f6f6;
+    
+}
+
+tr#conteudo:hover{
+    background-color: #e2e2e2;
+    
+}
+
+tr{
+    line-height: 30px;
+}
+
+input[type="button"] {
+    transition: all .3s;
+      border: 1px solid #e2e2e2;
+      padding: 8px 16px;
+      text-decoration: none;
+      border-radius: 5px;
+      font-size: 15px;
+      
+  }
+
+  input[type="button"]:not(.active) {
+    background-color:transparent;
+  }
+
+  .active {
+    background-color: #e2e2e2;
+ 
+  }
+  
+  input[type="button"]:hover:not(.active) {
+    background-color: #ddd;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
