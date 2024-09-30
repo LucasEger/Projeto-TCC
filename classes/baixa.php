@@ -1,5 +1,5 @@
 <?php
-Class Produto
+Class Baixa
 {
 	private $pdo;
 	public $msgErro = "";//tudo ok
@@ -24,23 +24,12 @@ Class Produto
 		
 	}
 
-	public function buscarProdutos ()
-{
-    global $pdo;
-
-    $res = array();
-    $cmd = $pdo->query("SELECT id, nome FROM produtos");
-    $res = $cmd->fetchAll(PDO::FETCH_ASSOC);
-    
-    return $res;
-}
-
     public function buscarDados ()
 	{
 		global $pdo;
 
 		$res = array();
-		$cmd = $pdo->query("SELECT * FROM produtos ORDER BY id DESC");
+		$cmd = $pdo->query("SELECT baixa.id as id_baixa, login2.nome, baixa.data_hora, produtos.id, produtos.nome as produto_nome, baixa.quantidade FROM baixa LEFT JOIN login2 ON login2.id = baixa.id_usuario LEFT JOIN produtos ON produtos.id = baixa.id_produto;");
 
 		$res = $cmd->fetchAll(PDO::FETCH_ASSOC);
 		
@@ -145,8 +134,6 @@ Class Produto
     
    
 }
-
-
 
 
 

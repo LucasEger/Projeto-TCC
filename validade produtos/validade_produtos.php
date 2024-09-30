@@ -8,8 +8,9 @@
          
  
 include ("../classes/conexao.php");
-$consulta = "SELECT id_produtos, nome, validade, quantidade, REPLACE(peso, '.', ',') AS peso FROM produtos ORDER BY `produtos`.`validade` DESC";
-$con = $mysqli->query($consulta) or die($mysqli->error);
+require_once "../classes/baixa.php";
+$p = new Baixa("projeto_tcc", "localhost", "root", "");
+
 
 ?>
 
@@ -32,9 +33,6 @@ $con = $mysqli->query($consulta) or die($mysqli->error);
            
         </div> 
           
-    
-
-        
           
       
         <nav id="menu">
@@ -45,33 +43,58 @@ $con = $mysqli->query($consulta) or die($mysqli->error);
                     <li><a href="../relatorios/relatorios.php">Relatórios</a></li>
                     <li><a href="../Usuarios/usuarios.php">Usuários</a></li>
                 </ul>
+
+                <div id="icone1">
+                  <a href="../validade produtos/cadastrar_baixa.php"><img src="../imagens/adicionar2.png" width="80"; height="80"></a>
+                </div>
         </nav>
 
-        <div id=nomevalidade>
-         <h1>Validade <br> dos Produtos</h1>
-        </div>
 
-        <div class="table table-hover" id="nova_tabela">
-        <table>
-            <tr>
-                <td>código</td>
-                <td>Produto</td>
-                <td>Validade</td>
-                <td>Quantidade</td>
-                <td>Peso Kg</td>
 
-            </tr>
-              <?php while($dado = $con->fetch_array()){ ?>
-            <tr>
-                <td><?php echo $dado["id_produtos"]; ?></td>
-                <td><?php echo $dado["nome"]; ?></td>
-                <td><?php echo date("d/m/y", strtotime($dado["validade"])); ?></td>
-                <td><?php echo $dado["quantidade"]; ?></td>
-                <td><?php echo $dado["peso"]; ?></td>
-            </tr>
-            <?php }?>
-        </table>
-        </div>
+          
+      <div id=nomeprodutos>
+          <h1>Saída Estoque</h1>
+      </div>
+
+  <section id="tabela_nova2" class="table table-hover"> 
+    <table id="tabela_nova3">
+          <tr id="titulo">
+              <th>Código</th>
+              <th>Nome do Usuário</th>
+              <th>Data e Hora</th>
+              <th>Código do produto</th>
+              <th>Produto</th>
+              <th>Quantidade baixada</th>
+              <th colspan="1">Opções</th>
+          </tr>
+
+         
+          <?php
+              $dados = $p->buscarDados();
+              if (count($dados) > 0) {
+                  for ($i = 0; $i < count($dados); $i++) {
+                      ?>
+                      <tr id="conteudo">
+                      <?php
+                      foreach ($dados[$i] as $k => $v) {
+                          if ($k == 'validade') {
+                              // Formatar a data de validade
+                              $v = date('d/m/Y', strtotime($v));
+                          }
+                          echo "<td>" . $v . "</td>";
+                      }
+                      ?>
+                      <td id="botoes">
+                          <a id="botao_editar" href="http://localhost/Projeto%20TCC/gerenciar%20produtos/alterar.php?id_up=<?php echo $dados[$i]['id']; ?>">Editar</a>
+                      </td>
+                      <?php
+                      echo "</tr>";
+                  }
+          }
+          ?>
+
+
+
 
         <div class="botao_sair">
           <a href="../logout.php">Sair</a>
