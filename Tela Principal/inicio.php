@@ -54,50 +54,31 @@ $u = new Usuario("projeto_tcc", "localhost", "root", "");
 
         
 
-<div class="12">
+        <div class="12">
     <?php
-    if(isset($_POST['nome']))
-    {
-      $nome = addslashes($_POST['nome']);
-      $senha = addslashes($_POST['senha']);
-      
-      if(!empty($nome) && !empty($senha))
-      {
-        $u->__construct("projeto_tcc","localhost","root","");
-        if($u->msgErro == "")
-        {
-          if($u->logar($nome,$senha))
-          {
-            header("location: ../corpo/corpo.php");
-          }
-          else
-          {
-            ?>
-            <div id="msg-jacadastrado1">
-              Nome e/ou senha estão incorretos!
-            </div>
-            <?php
-          }
+    if (isset($_POST['nome'])) {
+        $nome = addslashes($_POST['nome']);
+        $senha = addslashes($_POST['senha']);
+        
+        if (!empty($nome) && !empty($senha)) {
+            $u->__construct("projeto_tcc", "localhost", "root", "");
+            
+            if ($u->msgErro == "") {
+                if ($u->logar($nome, $senha)) {
+                    // Redireciona o usuário para a página após o login
+                    header("location: ../corpo/corpo.php");
+                    exit;
+                } else {
+                    echo '<div id="msg-jacadastrado1">Nome e/ou senha estão incorretos!</div>';
+                }
+            } else {
+                echo '<div id="msg-jacadastrado">Erro: ' . $u->msgErro . '</div>';
+            }
+        } else {
+            echo '<div id="msg-jacadastrado1">Preencha todos os campos!</div>';
         }
-        else
-        {
-          ?>
-          <divid="msg-jacadastrado">
-            <?php echo "Erro: ".$u->msgErro; 
-            ?>
-          </div>
-          <?php
-        }
-      }else
-      {
-        ?>
-        <div id="msg-jacadastrado1">
-          Preencha todos os campos!
-        </div>
-        <?php
-      }
     }
-  ?>
+    ?>
 </div>
  </body>
 </html>

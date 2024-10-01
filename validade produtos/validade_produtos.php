@@ -93,6 +93,9 @@ $p = new Baixa("projeto_tcc", "localhost", "root", "");
           }
           ?>
 
+</table>
+      <script src="http://localhost/Projeto%20TCC/_js/paginacao.js"></script>
+  </section>
 
 
 
