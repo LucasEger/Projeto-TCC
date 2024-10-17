@@ -27,7 +27,7 @@
   
     </head>
 
-  <body>
+  <body id="pagina">
      
   <div class="baner">
  
@@ -40,19 +40,10 @@
             <h1>Menu Principal</h1>
                 <ul type= "disc">
                     <li><a href="../gerenciar produtos/gerenciar.php">Gerenciar Produtos</a></li>
-                    <li><a href="../validade produtos/validade_produtos.php">Validade Produtos</a></li>
+                    <li><a href="../validade produtos/validade_produtos.php">Saída de Estoque</a></li>
                     <li><a href="../relatorios/relatorios.php">Relatórios</a></li>
                     <li><a href="../Usuarios/usuarios.php">Usuários</a></li>
                 </ul>
-                <div id="icone1">
-                  <a href="../gerenciar produtos/adicionar.php"><img src="../imagens/adicionar2.png" width="80"; height="80"></a>
-                </div>
-                <div id="icone2">
-                  <a href="../gerenciar produtos/alterar.php"><img src="../imagens/editar3.png" width="85"; height="85"></a>
-                </div>
-                <div id="icone3">
-                  <a href="../gerenciar produtos/remover.php"><img src="../imagens/excluir2.png" width="80"; height="80"></a>
-                </div>
         </nav>
         
       <div id=nomeprodutos>

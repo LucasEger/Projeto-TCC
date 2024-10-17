@@ -24,7 +24,7 @@ $p = new Produto("projeto_tcc", "localhost", "root", "");
   
     </head>
 
-  <body>
+    <body id="pagina">
      <div class="baner">
      
       </div> 
@@ -37,7 +37,7 @@ $p = new Produto("projeto_tcc", "localhost", "root", "");
             <h1>Menu Principal</h1>
                 <ul type= "disc">
                     <li><a href="../gerenciar produtos/gerenciar.php">Gerenciar Produtos</a></li>
-                    <li><a href="../validade produtos/validade_produtos.php">Validade Produtos</a></li>
+                    <li><a href="../validade produtos/validade_produtos.php">Saída de Estoque</a></li>
                     <li><a href="../relatorios/relatorios.php">Relatórios</a></li>
                     <li><a href="../Usuarios/usuarios.php">Usuários</a></li>
                 </ul>

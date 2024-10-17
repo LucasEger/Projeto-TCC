@@ -25,7 +25,7 @@ if(!isset($_SESSION['id']))
   
     </head>
 
-  <body>
+    <body id="pagina">
 
     <div id="banerprincipal">
 
@@ -46,7 +46,7 @@ if(!isset($_SESSION['id']))
             <h1>Menu Principal</h1>
                 <ul type= "disc">
                     <li><a href="../gerenciar produtos/gerenciar.php">Gerenciar Produtos</a></li>
-                    <li><a href="../validade produtos/validade_produtos.php">Validade Produtos</a></li>
+                    <li><a href="../validade produtos/validade_produtos.php">Saída de Estoque</a></li>
                     <li><a href="../relatorios/relatorios.php">Relatórios</a></li>
                     <li><a href="../Usuarios/usuarios.php">Usuários</a></li>
                 </ul>
@@ -55,12 +55,12 @@ if(!isset($_SESSION['id']))
                 </div>     
         </nav>
 
-        <div id=nomeusuarios>
+        <div id=nomeprodutos>
           <h1>Gerenciamento <br> de Usuários</h1>
         </div>
     
              
-        <form id="cadastrar" method="POST">
+        <form id="cadastrar_usuario" method="POST">
           <div class="form-row">
             <div class="form-group col-md-6">
               <label for="inputEmail4">Nome</label>

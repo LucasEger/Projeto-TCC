@@ -48,7 +48,7 @@ if (!isset($_SESSION['id'])) {
           </script>
     </head>
 
-  <body>
+  <body id="pagina">
   <div id="banerprincipal">
       
     </div>
@@ -59,7 +59,7 @@ if (!isset($_SESSION['id'])) {
             <h1>Menu Principal</h1>
                 <ul type= "disc">
                     <li><a href="../gerenciar produtos/gerenciar.php">Gerenciar Produtos</a></li>
-                    <li><a href="../validade produtos/validade_produtos.php">Baixar Estoque</a></li>
+                    <li><a href="../validade produtos/validade_produtos.php">Saída de Estoque</a></li>
                     <li><a href="../relatorios/relatorios.php">Relatórios</a></li>
                     <li><a href="../Usuarios/usuarios.php">Usuários</a></li>
                 </ul>

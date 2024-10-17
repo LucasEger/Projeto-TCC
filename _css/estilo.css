@@ -5,14 +5,97 @@
     padding: 0px;
     margin: 0px;
 }
-/* formatação cadastro*/ 
 
-form#cadastrar{
-    left: 900px;
+body#pagina {
+    background-color: #f6f6f6;;
+}
+
+/* formatação cadastro usuario*/ 
+
+form#cadastrar_usuario {
     position: absolute;
-    top: 300px;
-    font-size: 40px;
-    
+    top: 165px;
+    left: 325px;
+    font-size: 18px;
+    font-family: 'Roboto', Arial, sans-serif;
+    background-color: #f9f9f9; 
+    padding: 20px 40px;
+    border-radius: 10px; /* Bordas suaves */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    width: 400px;
+    border: 1px solid #e0e0e0; 
+}
+
+form#cadastrar_usuario input, 
+form#cadastrar_usuario button {
+    font-size: 16px;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 100%;
+}
+
+form#cadastrar_usuario input:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+form#cadastrar_usuario button {
+    background-color: #007bff;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border: none;
+}
+
+form#cadastrar_usuario button:hover {
+    background-color: #0056b3;
+}
+
+form#cadastrar {
+    position: absolute;
+    top: 130px;
+    left: 325px;
+    font-size: 18px;
+    font-family: 'Roboto', Arial, sans-serif;
+    background-color: #f9f9f9; 
+    padding: 20px 40px;
+    border-radius: 10px; /* Bordas suaves */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    width: 400px;
+    border: 1px solid #e0e0e0; 
+}
+
+form#cadastrar input, 
+form#cadastrar button {
+    font-size: 16px;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 100%;
+}
+
+form#cadastrar input:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+form#cadastrar button {
+    background-color: #007bff;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border: none;
+}
+
+form#cadastrar button:hover {
+    background-color: #0056b3;
 }
 
 /* formatação do login */
@@ -111,48 +194,51 @@ div#msg-jatacadastrado1{
     left: 400px;
 }
 
-/* formatação do menu padrão */
+/* Formatação do menu */
 
-nav#menu{
+nav#menu {
     display: block;
     position: absolute;
     top: 20px;
     left: 30px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-nav#menu ul{
+nav#menu ul {
     list-style: none;
-    position: absolute;
-
+    padding: 0;
+    margin: 0;
+    position: relative;
 }
 
-nav#menu li{
-    
-    
-    border-radius: 6px;
-    background-color: white;
-    background-position: top;
-    border: none;
-    padding: 15px;
-    font-size: 25px;
-    border-width: 5px;
-    border-style: solid;
-    border-color: darkgrey;
-
+nav#menu li {
+    border-radius: 8px;
+    background-color: #f8f9fa;
+    padding: 12px 20px;
+    font-size: 18px;
+    margin-bottom: 10px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-nav#menu li:hover{
-    background-color: rgb(211, 211, 211);
+nav#menu li:hover {
+    background-color: #e2e6ea; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); 
 }
 
-nav#menu h1{
+nav#menu h1 {
     display: none;
 }
 
-nav#menu a{
-
-    color: black;
+nav#menu a {
+    color: #343a40; 
     text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+nav#menu a:hover {
+    color: #007bff; 
 }
 
 /* formtação dos icones */
@@ -279,10 +365,18 @@ div#nomerelatorio{
 
 /*formtação de gerenciamento de produtos */
 
-div#nomeprodutos{
+div#nomeprodutos {
     position: absolute;
     top: 25px;
     left: 330px;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 26px;
+    font-weight: 700;
+    color: #2c3e50;
+    background-color: #f9f9f9; 
+    padding: 10px 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 div#botao1{

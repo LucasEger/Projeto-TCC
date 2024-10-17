@@ -23,7 +23,7 @@ if(!isset($_SESSION['id']))
   
     </head>
 
-  <body>
+    <body id="pagina">
     <div id="banerprincipal">
       
     </div>       
@@ -33,22 +33,13 @@ if(!isset($_SESSION['id']))
             <h1>Menu Principal</h1>
                 <ul type= "disc">
                     <li><a href="../gerenciar produtos/gerenciar.php">Gerenciar Produtos</a></li>
-                    <li><a href="../validade produtos/validade_produtos.php">Validade Produtos</a></li>
+                    <li><a href="../validade produtos/validade_produtos.php">Saída de Estoque</a></li>
                     <li><a href="../relatorios/relatorios.php">Relatórios</a></li>
                     <li><a href="../Usuarios/usuarios.php">Usuários</a></li>
-                </ul>
-                <div id="icone1">
-                  <a href="../Usuarios/cadastrar.php"><img src="../imagens/adicionar.png" width="80"; height="80"></a>
-                </div>
-                <div id="icone2">
-                  <a href=""><img src="../imagens/alterar.png" width="93"; height="93"></a>
-                </div>
-                <div id="icone3">
-                  <a href="../Usuarios/excluir.php"><img src="../imagens/excluir2.png" width="80"; height="80"></a>
-                </div>     
+                </ul>   
         </nav>
 
-        <div id=nomeusuarios>
+        <div id=nomeprodutos>
           <h1>Gerenciamento <br> de Usuários</h1>
         </div>
      
@@ -57,7 +48,7 @@ if(!isset($_SESSION['id']))
         
               
       
-        <form id="cadastrar" method="POST">
+        <form id="cadastrar_usuario" method="POST">
           <div class="form-row">
             <div class="form-group col-md-6">
               <label for="inputEmail4">Nome</label>
