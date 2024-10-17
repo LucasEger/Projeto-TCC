@@ -43,7 +43,7 @@ $p = new Usuario("projeto_tcc", "localhost", "root", "");
         </nav>
 
         <div id=nomeprodutos>
-          <h1>Gerenciamento <br> de Usuários</h1>
+          <h1>Gerenciamento de Usuários</h1>
         </div>
         
   <section id="tabela_nova2" class="table table-hover">

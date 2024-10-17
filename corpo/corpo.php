@@ -1,10 +1,11 @@
 <?php
 session_start();
+
+
 if (!isset($_SESSION['id'])) {
     header("location: ../Tela Principal/inicio.php");
     exit;
 }  
-
 ?>
 
 <html lang="pt-br">
@@ -66,27 +67,17 @@ if (!isset($_SESSION['id'])) {
                
         </nav>
 
-        <?php
+<?php
 
 if (isset($_SESSION['nome'])) {
   $nomeAdmin = $_SESSION['nome'];
-  echo "Olá, " . htmlspecialchars($nomeAdmin) . "!";
+  echo "<div id='nomeprodutoss'>Olá, " . htmlspecialchars($nomeAdmin) . "!</div>";
 } else {
-  echo "Olá, Admin!";
+  echo "<div id='nomeprodutoss'>Olá, Admin!</div>";
 }
 
-// Verifica se os dados estão armazenados na sessão
-if (isset($_SESSION['id']) && isset($_SESSION['nome'])) {
-  echo "<pre>";  // Formata a saída para facilitar a leitura
-  echo "Sessão ID e Nome:\n";
-  var_dump($_SESSION['id']);   // Exibe o ID armazenado
-  var_dump($_SESSION['nome']); // Exibe o Nome armazenado
-  echo "</pre>";
-} else {
-  echo "Nenhum ID ou Nome foi armazenado na sessão.";
-}
+
 ?>
-
         <div id=nomeprodutos>
         <h1>Controle de Estoque</h1>
       </div>

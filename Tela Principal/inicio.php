@@ -28,14 +28,16 @@ $u = new Usuario("projeto_tcc", "localhost", "root", "");
 
 
         
-    <form id="cadastrar" method="POST">
+    <form id="cadastrar_login" method="POST">
           <div class="form-row">
             <div class="form-group col-md-6">
-              <input type="text" class="form-control" id="inputEmail4" name="nome" placeholder="Usuário" size="60" >
+            <label for="inputEmail4">Usuário</label>
+              <input type="text" class="form-control" id="inputEmail4" name="nome" placeholder="Login" size="60" >
             </div>
           </div>
             <div class="form-row">
               <div class="form-group col-md-6">
+              <label for="inputPassword4">Senha</label>
                 <input type="password" name="senha" class="form-control" id="inputPassword4" placeholder="Senha"
                 size="50">
               </div>

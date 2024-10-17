@@ -48,14 +48,14 @@
         </nav>
         
       <div id=nomeprodutos>
-        <h1>Cadastrar Baixa</h1>
+        <h1>Cadastrar saída de estoque</h1>
       </div>
 
       <form id="cadastrar" method="POST">
   <div class="form-row">
     <div class="form-group col-md-6">
       <label for="inputProduto">Produto</label>
-      <select class="form-control" id="inputProduto" name="produto">
+      <select class="form-control" id="inputProdutos" name="produto">
         <?php
           $produtos = $u->buscarProdutos();
           foreach ($produtos as $produto) {
@@ -71,7 +71,7 @@
       <input type="number" class="form-control" id="inputQuantidade" name="quantidade" size="80">
     </div>
   </div>
-  <input id="botao" type="submit" class="btn btn-primary" value="Gravar" name="Cadastrar">
+  <input id="botao" type="submit" class="btn btn-primary" value="Cadastrar" name="Cadastrar">
 </form>
    
           <div class="botao_sair">
@@ -118,15 +118,15 @@ if (isset($_POST['Cadastrar'])) {
                 $insert_cmd->bindValue(":quantidade_baixada", $quantidade_baixada);
                 $insert_cmd->execute();
 
-                echo "<div class='alert alert-success'>Quantidade atualizada e registro de baixa criado com sucesso!</div>";
+                echo "<div id='msg-jacadastrado5'>Quantidade atualizada e registro de baixa criado com sucesso!</div>";
             } else {
-                echo "<div class='alert alert-danger'>Erro: A quantidade solicitada excede o estoque disponível!</div>";
+                echo "<div id='msg-jacadastrado5'>Erro: A quantidade solicitada excede o estoque disponível!</div>";
             }
         } else {
-            echo "<div class='alert alert-danger'>Erro: Produto não encontrado.</div>";
+            echo "<div id='msg-jacadastrado5'>Erro: Produto não encontrado.</div>";
         }
     } else {
-        echo "<div class='alert alert-danger'>Por favor, preencha todos os campos.</div>";
+        echo "<div id='msg-jacadastrado5'>Por favor, preencha todos os campos.</div>";
     }
 }
 

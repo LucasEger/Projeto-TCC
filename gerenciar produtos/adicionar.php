@@ -75,7 +75,7 @@
                 <input type="float" name="peso" class="form-control" id="inputPassword4">
               </div>
             </div>
-            <input id="botao" type="submit" class="btn btn-primary" value="Gravar" name="Cadastrar">
+            <input id="botao" type="submit" class="btn btn-primary" value="Cadastrar" name="Cadastrar">
           </form>
    
           <div class="botao_sair">

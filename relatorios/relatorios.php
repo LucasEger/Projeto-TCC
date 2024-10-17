@@ -70,6 +70,10 @@
                 </ul>
         </nav>
 
+        <div id=nomeprodutos>
+          <h1>Relatório Produtos</h1>
+        </div>
+
 
         <div id="nomerelatorio">
             <table id="listar-usuario" class="display">

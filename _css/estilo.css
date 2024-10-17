@@ -10,12 +10,10 @@ body#pagina {
     background-color: #f6f6f6;;
 }
 
-/* formatação cadastro usuario*/ 
-
-form#cadastrar_usuario {
+form#cadastrar_login {
     position: absolute;
-    top: 165px;
-    left: 325px;
+    top: 320px;
+    left: 725px;
     font-size: 18px;
     font-family: 'Roboto', Arial, sans-serif;
     background-color: #f9f9f9; 
@@ -26,34 +24,44 @@ form#cadastrar_usuario {
     border: 1px solid #e0e0e0; 
 }
 
-form#cadastrar_usuario input, 
-form#cadastrar_usuario button {
+/* Estilos para os campos de input */
+form#cadastrar_login input.form-control {
     font-size: 16px;
     padding: 10px;
     margin-bottom: 15px;
     border-radius: 5px;
     border: 1px solid #ccc;
-    width: 100%;
+    width: 165%; /* Campos de input ocupam 100% da largura do formulário */
 }
 
-form#cadastrar_usuario input:focus {
+#inputProdutos {
+    width: 200%; 
+}
+
+form#cadastrar_login input:focus {
     border-color: #007bff;
     outline: none;
     box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
 }
 
-form#cadastrar_usuario button {
+/* Estilos para o botão */
+form#cadastrar_login input#botao {
+    width: auto; /* O botão mantém seu tamanho natural */
     background-color: #007bff;
     color: white;
     font-weight: bold;
+    padding: 10px 20px; /* Definição de padding ajustada para o botão */
     cursor: pointer;
     transition: background-color 0.3s ease;
     border: none;
 }
 
-form#cadastrar_usuario button:hover {
+form#cadastrar_login input#botao:hover {
     background-color: #0056b3;
 }
+
+
+/* formatação cadastro usuario*/ 
 
 form#cadastrar {
     position: absolute;
@@ -69,14 +77,13 @@ form#cadastrar {
     border: 1px solid #e0e0e0; 
 }
 
-form#cadastrar input, 
-form#cadastrar button {
+form#cadastrar input {
     font-size: 16px;
     padding: 10px;
     margin-bottom: 15px;
     border-radius: 5px;
     border: 1px solid #ccc;
-    width: 100%;
+    width: 200%;
 }
 
 form#cadastrar input:focus {
@@ -85,13 +92,14 @@ form#cadastrar input:focus {
     box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
 }
 
-form#cadastrar button {
-    background-color: #007bff;
+form#cadastrar input#botao {
+    background-color: #606060;
     color: white;
     font-weight: bold;
     cursor: pointer;
     transition: background-color 0.3s ease;
     border: none;
+    width: 50%;
 }
 
 form#cadastrar button:hover {
@@ -138,13 +146,12 @@ div#msg-123{
     font-size: 15px;
 }
 
-div#msg-jacadastrado1{
-    left: 900px;
+div#msg-jacadastrado1 {
+    left: 769px;
     position: absolute;
-    top: 386px;
+    top: 520px;
     font-size: 15px;
-    color:rgb(211, 211, 211)
-
+    color: rgb(228 65 65);
 }
 
 div#msg-jacadastrado{
@@ -154,17 +161,24 @@ div#msg-jacadastrado{
     font-size: 15px;
 }
 
-div#msg-jacadastrado2{
-    left: 600px;
+div#msg-jacadastrado2 {
+    left: 368px;
     position: absolute;
-    top: 313px;
+    top: 433px;
     font-size: 15px;
 }
 
-div#msg-3{
-    left: 600px;
+div#msg-jacadastrado5 {
+    left: 368px;
     position: absolute;
-    top: 498px;
+    top: 317px;
+    font-size: 15px;
+}
+
+div#msg-3 {
+    left: 370px;
+    position: absolute;
+    top: 537px;
     font-size: 15px;
 }
 
@@ -199,7 +213,7 @@ div#msg-jatacadastrado1{
 nav#menu {
     display: block;
     position: absolute;
-    top: 20px;
+    top: 70px;
     left: 30px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
@@ -246,7 +260,7 @@ nav#menu a:hover {
 div#icone1{
     position: absolute;
     top: 13px;
-    left: 700px;
+    left: 1352px;
     display: inline-block;
 }
 
@@ -356,10 +370,10 @@ div#nomevalidade{
     left: 700px;
 }
 
-div#nomerelatorio{
+div#nomerelatorio {
     position: absolute;
-    top: 300px;
-    left: 350px;
+    top: 135px;
+    left: 329px;
     width: 75%;
 }
 
@@ -377,6 +391,17 @@ div#nomeprodutos {
     padding: 10px 20px;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+div#nomeprodutoss {
+    position: absolute;
+    top: 5px;
+    left: 30px;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 26px;
+    font-weight: 700;
+    color: #2c3e50;
+    padding: 10px 20px;
 }
 
 div#botao1{
@@ -406,7 +431,7 @@ div#botao1{
 
 #tabela_nova2{
     position: absolute;
-    top: 250px;
+    top: 135px;
     left: 325px;
 }
 

@@ -56,11 +56,11 @@ if(!isset($_SESSION['id']))
         </nav>
 
         <div id=nomeprodutos>
-          <h1>Gerenciamento <br> de Usuários</h1>
+          <h1>Gerenciamento de Usuários</h1>
         </div>
     
              
-        <form id="cadastrar_usuario" method="POST">
+        <form id="cadastrar" method="POST">
           <div class="form-row">
             <div class="form-group col-md-6">
               <label for="inputEmail4">Nome</label>
