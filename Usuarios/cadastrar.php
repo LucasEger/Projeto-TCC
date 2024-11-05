@@ -89,21 +89,21 @@ if(isset($_POST['nome']))
     $email = addslashes($_POST['email']);
     $senha = addslashes($_POST['senha']);
     
-    // Verificar se está preenchido
+ 
     if(!empty($nome) && !empty($senha))
     {
         $u->__construct("projeto_tcc","localhost","root","");
-        if($u->msgErro == "") // Se está tudo ok 
+        if($u->msgErro == "")
         {
             if($u->Cadastrar($nome, $email, $senha))
             {
                 echo '<div id="msg-jacadastrado2">Cadastrado com sucesso!</div>';
                 
-                sleep(2); // Pausa de 2 segundos
+                sleep(2);
                 
-                // Redireciona para a tela de listagem de usuários
+              
                 header("Location: http://localhost/Projeto%20TCC/Usuarios/usuarios.php");
-                exit; // Interrompe o script após o redirecionamento
+                exit;
             }
             else
             {

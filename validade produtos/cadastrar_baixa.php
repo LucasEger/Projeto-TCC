@@ -86,12 +86,12 @@
 
         <?php
 if (isset($_POST['Cadastrar'])) {
-    $id_produto = addslashes($_POST['produto']); // ID do produto selecionado no select
+    $id_produto = addslashes($_POST['produto']); 
     $quantidade_baixada = addslashes($_POST['quantidade']);
-    $id_usuario = $_SESSION['id']; /* ID do usuário que está fazendo a baixa (deve ser definido) */;
+    $id_usuario = $_SESSION['id']; ;
 
     if (!empty($id_produto) && !empty($quantidade_baixada)) {
-        // Buscar a quantidade atual do produto
+        
         $res = $pdo->prepare("SELECT quantidade FROM produtos WHERE id = :id_produto");
         $res->bindValue(":id_produto", $id_produto);
         $res->execute();
@@ -100,18 +100,18 @@ if (isset($_POST['Cadastrar'])) {
         if ($dados) {
             $quantidade_atual = $dados['quantidade'];
 
-            // Verificar se a quantidade baixada é menor ou igual à disponível
+            
             if ($quantidade_baixada <= $quantidade_atual) {
-                // Subtrair a quantidade baixada do estoque
+                
                 $nova_quantidade = $quantidade_atual - $quantidade_baixada;
 
-                // Atualizar a quantidade no banco de dados
+                
                 $cmd = $pdo->prepare("UPDATE produtos SET quantidade = :nova_quantidade WHERE id = :id_produto");
                 $cmd->bindValue(":nova_quantidade", $nova_quantidade);
                 $cmd->bindValue(":id_produto", $id_produto);
                 $cmd->execute();
 
-                // Inserir na tabela baixa
+                
                 $insert_cmd = $pdo->prepare("INSERT INTO baixa (id_usuario, id_produto, quantidade, data_hora) VALUES (:id_usuario, :id_produto, :quantidade_baixada, NOW())");
                 $insert_cmd->bindValue(":id_usuario", $id_usuario);
                 $insert_cmd->bindValue(":id_produto", $id_produto);

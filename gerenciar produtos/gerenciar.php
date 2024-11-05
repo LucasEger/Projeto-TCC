@@ -70,7 +70,7 @@ $p = new Produto("projeto_tcc", "localhost", "root", "");
                       <?php
                       foreach ($dados[$i] as $k => $v) {
                           if ($k == 'validade') {
-                              // Formatar a data de validade
+                              
                               $v = date('d/m/Y', strtotime($v));
                           }
                           echo "<td>" . $v . "</td>";

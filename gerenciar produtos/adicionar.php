@@ -98,11 +98,11 @@
           $peso = str_replace(',', '.', $peso);
           
           
-          //verificar se está preenchido
+          
           if(!empty($nome) && !empty($validade) && !empty($quantidade) && !empty($peso))
           {
               $u->__construct("projeto_tcc","localhost","root","");
-              if($u->msgErro == "")//se está tudo ok 
+              if($u->msgErro == "")
               {
                     if($u->cadastrar($nome, $validade, $quantidade, $peso))
                       {
@@ -111,11 +111,11 @@
                     Cadastrado com sucesso!
                     </div>
                 <?php
-                sleep(2); // Pausa de 2 segundos
+                sleep(2); 
                 
-                // Redireciona para a tela de listagem de usuários
+                
                 header("Location: http://localhost/Projeto%20TCC/gerenciar%20produtos/gerenciar.php");
-                exit; // Interrompe o script após o redirecionamento
+                exit; 
                       }
                       else
                       {

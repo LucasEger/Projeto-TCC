@@ -6,7 +6,7 @@ $p = new Usuario("projeto_tcc", "localhost", "root", "");
 if (isset($_GET['id_up'])) {
     $id_update = addslashes($_GET['id_up']);
     if (isset($_GET['confirm']) && $_GET['confirm'] === 'true') {
-        // Aqui você pode chamar o método de exclusão ou fazer qualquer outra operação necessária
+        
         $p->excluir_usuario($id_update);
         header("location: http://localhost/Projeto%20TCC/Usuarios/usuarios.php");
         exit;

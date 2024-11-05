@@ -23,7 +23,7 @@
     $quantidade = addslashes($_POST['quantidade']);
     $peso = addslashes($_POST['peso']);
 
-    // Verificar se está preenchido
+  
     if (!empty($nome) && !empty($validade) && !empty($quantidade) && !empty($peso)) {
         if ($u->msgErro == "") {
             if ($u->atualizarDadosProduto($id, $nome, $validade, $quantidade, $peso)) {

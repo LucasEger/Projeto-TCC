@@ -47,10 +47,10 @@ while( $row_usuarios =mysqli_fetch_array($resultado_usuarios) ) {
 
 //Cria o array de informações a serem retornadas para o Javascript
 $json_data = array(
-	"draw" => intval( $requestData['draw'] ),//para cada requisição é enviado um número como parâmetro
-	"recordsTotal" => intval( $qnt_linhas ),  //Quantidade de registros que há no banco de dados
-	"recordsFiltered" => intval( $totalFiltered ), //Total de registros quando houver pesquisa
-	"data" => $dados   //Array de dados completo dos dados retornados da tabela 
+	"draw" => intval( $requestData['draw'] ),
+	"recordsTotal" => intval( $qnt_linhas ), 
+	"recordsFiltered" => intval( $totalFiltered ), 
+	"data" => $dados  
 );
 
-echo json_encode($json_data);  //enviar dados como formato json
+echo json_encode($json_data);  

@@ -140,7 +140,6 @@ if (isset($_POST['alterar'])) {
     $nome = addslashes($_POST['nome']);
     $email = addslashes($_POST['email']);
 
-    // Verificar se está preenchido
     if (!empty($nome) && !empty($email)) {
         if ($p->msgErro == "") {
             if ($p->atualizarDadosPessoa($id, $nome, $email)) {
@@ -163,11 +162,11 @@ if (isset($_POST['alterar'])) {
       }
      
     }
-    sleep(2); // Pausa de 2 segundos
+    sleep(2);
                 
-                // Redireciona para a tela de listagem de usuários
+               
                 header("Location: http://localhost/Projeto%20TCC/Usuarios/usuarios.php");
-                exit; // Interrompe o script após o redirecionamento
+                exit; 
   }
 ?> 
 
