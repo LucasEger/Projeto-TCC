@@ -163,8 +163,11 @@ if (isset($_POST['alterar'])) {
       }
      
     }
-    sleep(2.5);
-    header("location: http://localhost/Projeto%20TCC/Usuarios/usuarios.php");
+    sleep(2); // Pausa de 2 segundos
+                
+                // Redireciona para a tela de listagem de usuários
+                header("Location: http://localhost/Projeto%20TCC/Usuarios/usuarios.php");
+                exit; // Interrompe o script após o redirecionamento
   }
 ?> 
 

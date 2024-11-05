@@ -118,9 +118,16 @@ if (isset($_POST['Cadastrar'])) {
                 $insert_cmd->bindValue(":quantidade_baixada", $quantidade_baixada);
                 $insert_cmd->execute();
 
-                echo "<div id='msg-jacadastrado5'>Quantidade atualizada e registro de baixa criado com sucesso!</div>";
+                echo "<div id='msg-jacadastrado5'>Quantidade atualizada com sucesso!</div>";
+
+                echo "<script>
+                setTimeout(function() {
+                    window.location.href = 'http://localhost/Projeto%20TCC/validade%20produtos/validade_produtos.php';
+                   }       , 2000);
+                    </script>";
+
             } else {
-                echo "<div id='msg-jacadastrado5'>Erro: A quantidade solicitada excede o estoque disponível!</div>";
+                echo "<div id='msg-jacadastrado5'>A quantidade solicitada excede o estoque disponível!</div>";
             }
         } else {
             echo "<div id='msg-jacadastrado5'>Erro: Produto não encontrado.</div>";

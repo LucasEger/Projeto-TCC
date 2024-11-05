@@ -10,18 +10,26 @@ body#pagina {
     background-color: #f6f6f6;;
 }
 
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
 form#cadastrar_login {
-    position: absolute;
-    top: 320px;
-    left: 725px;
     font-size: 18px;
     font-family: 'Roboto', Arial, sans-serif;
-    background-color: #f9f9f9; 
-    padding: 20px 40px;
-    border-radius: 10px; /* Bordas suaves */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    background-color: #f9f9f9;
+    padding: 30px 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     width: 400px;
-    border: 1px solid #e0e0e0; 
+    border: 1px solid #e0e0e0;
+    position: relative;
+    top: 50px; /* Ajuste fino para posicionar um pouco abaixo do centro */
+    left: -20px;
 }
 
 /* Estilos para os campos de input */
@@ -307,10 +315,14 @@ div#banerprincipal{
     left: 65px;
 }
 
-.baner_login{
+.baner_login {
+    width: 100vw; 
+    height: 100vh;
     object-fit: cover;
-    position: relative;
-
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
 }
 
 

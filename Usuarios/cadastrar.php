@@ -83,70 +83,44 @@ if(!isset($_SESSION['id']))
 
     
         <?php
-      if(isset($_POST['nome']))
-      {
-          $nome = addslashes($_POST['nome']);
-          $email = addslashes($_POST['email']);
-          $senha = addslashes($_POST['senha']);
-          
-          //verificar se está preenchido
-          if(!empty($nome) && !empty($senha))
-          {
-              $u->__construct("projeto_tcc","localhost","root","");
-              if($u->msgErro == "")//se está tudo ok 
-              {
-                    if($u->Cadastrar($nome, $email, $senha))
-                      {
-                ?>
-                  <div id="msg-jacadastrado2">
-                        Cadastrado com sucesso!
-                    </div>
-                    
-                <?php
-                  sleep(2.5);
-                  header("location: http://localhost/Projeto%20TCC/Usuarios/usuarios.php");
-                      }
-                      else
-                      {
-                ?>
-                  <div id="msg-jacadastrado2">
-                    E-mail já cadastrado!
-                  </div>
-                <?php
-                      }
+if(isset($_POST['nome']))
+{
+    $nome = addslashes($_POST['nome']);
+    $email = addslashes($_POST['email']);
+    $senha = addslashes($_POST['senha']);
+    
+    // Verificar se está preenchido
+    if(!empty($nome) && !empty($senha))
+    {
+        $u->__construct("projeto_tcc","localhost","root","");
+        if($u->msgErro == "") // Se está tudo ok 
+        {
+            if($u->Cadastrar($nome, $email, $senha))
+            {
+                echo '<div id="msg-jacadastrado2">Cadastrado com sucesso!</div>';
                 
-              ?>
-                <div id="msg-conf">
-               
-                </div>
-              <?php
-                  
-              }
-              else
-              {
-            ?>
-
-              <div id="msg erro">
-              <?php echo"Erro: ".$u->msgErro; ?>
-              
-              </div>
-            <?php
-            
-              }
-          }else
-          {
-          ?>
-          <div id="msg-jacadastrado2">
-            Preencha todos os campos!
-          </div>
-
-          <?php
-          
-          }
-
-      }
-
-      ?>
+                sleep(2); // Pausa de 2 segundos
+                
+                // Redireciona para a tela de listagem de usuários
+                header("Location: http://localhost/Projeto%20TCC/Usuarios/usuarios.php");
+                exit; // Interrompe o script após o redirecionamento
+            }
+            else
+            {
+                echo '<div id="msg-jacadastrado2">E-mail já cadastrado!</div>';
+            }
+        }
+        else
+        {
+            echo '<div id="msg erro">Erro: ' . $u->msgErro . '</div>';
+        }
+    }
+    else
+    {
+        echo '<div id="msg-jacadastrado2">Preencha todos os campos!</div>';
+    }
+}
+?>
 
     
   </body>

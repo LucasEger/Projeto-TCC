@@ -111,6 +111,11 @@
                     Cadastrado com sucesso!
                     </div>
                 <?php
+                sleep(2); // Pausa de 2 segundos
+                
+                // Redireciona para a tela de listagem de usuários
+                header("Location: http://localhost/Projeto%20TCC/gerenciar%20produtos/gerenciar.php");
+                exit; // Interrompe o script após o redirecionamento
                       }
                       else
                       {

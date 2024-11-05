@@ -41,7 +41,7 @@
             }
         }
     }
-    sleep(2.5);
+    sleep(2);
     header("location: http://localhost/Projeto%20TCC/gerenciar%20produtos/gerenciar.php");
     exit;
 }

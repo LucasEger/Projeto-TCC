@@ -65,7 +65,6 @@ $p = new Baixa("projeto_tcc", "localhost", "root", "");
               <th>Código do produto</th>
               <th>Produto</th>
               <th>Quantidade baixada</th>
-              <th colspan="1">Opções</th>
           </tr>
 
          
@@ -73,24 +72,17 @@ $p = new Baixa("projeto_tcc", "localhost", "root", "");
               $dados = $p->buscarDados();
               if (count($dados) > 0) {
                   for ($i = 0; $i < count($dados); $i++) {
-                      ?>
-                      <tr id="conteudo">
-                      <?php
+                      echo "<tr id='conteudo'>";
                       foreach ($dados[$i] as $k => $v) {
-                          if ($k == 'validade') {
-                              // Formatar a data de validade
-                              $v = date('d/m/Y', strtotime($v));
+                          if ($k == 'data_hora') { 
+                            
+                              $v = date('d/m/Y H:i', strtotime($v));
                           }
-                          echo "<td>" . $v . "</td>";
+                          echo "<td>" . htmlspecialchars($v) . "</td>";
                       }
-                      ?>
-                      <td id="botoes">
-                          <a id="botao_editar" href="http://localhost/Projeto%20TCC/gerenciar%20produtos/alterar.php?id_up=<?php echo $dados[$i]['id']; ?>">Editar</a>
-                      </td>
-                      <?php
                       echo "</tr>";
                   }
-          }
+              }
           ?>
 
 </table>
