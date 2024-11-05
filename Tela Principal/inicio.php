@@ -23,29 +23,28 @@ $u = new Usuario("projeto_tcc", "localhost", "root", "");
         </div>
 
         <div class="titulo_login">
-          <h1> Controle de estoque </h1>
+          <h1>STOCK GUARDIAN</h1>
         </div>
 
 
         
-    <form id="cadastrar_login" method="POST">
-          <div class="form-row">
-            <div class="form-group col-md-6">
-            <label for="inputEmail4">Usuário</label>
-              <input type="text" class="form-control" id="inputEmail4" name="nome" placeholder="Login" size="60" >
-            </div>
-          </div>
-            <div class="form-row">
-              <div class="form-group col-md-6">
-              <label for="inputPassword4">Senha</label>
-                <input type="password" name="senha" class="form-control" id="inputPassword4" placeholder="Senha"
-                size="50">
-              </div>
-            </div>
-           <form id="botao1">
-            <input id="botao" type="submit" class="btn btn-primary" value="Acessar" name="Cadastrar" position="center" >
-            </form>
-          </form>
+        <form id="cadastrar_login" method="POST">
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="inputEmail4">Login</label>
+            <input type="email" class="form-control" id="inputEmail4" name="email" placeholder="Digite seu e-mail" size="60">
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="inputPassword4">Senha</label>
+            <input type="password" name="senha" class="form-control" id="inputPassword4" placeholder="Senha" size="50">
+        </div>
+    </div>
+    <form id="botao1">
+        <input id="botao" type="submit" class="btn btn-primary" value="Acessar" name="Cadastrar" position="center">
+    </form>
+</form>
 
 
 
@@ -57,30 +56,30 @@ $u = new Usuario("projeto_tcc", "localhost", "root", "");
         
 
         <div class="12">
-    <?php
-    if (isset($_POST['nome'])) {
-        $nome = addslashes($_POST['nome']);
-        $senha = addslashes($_POST['senha']);
+        <?php
+if (isset($_POST['email'])) { 
+    $email = addslashes($_POST['email']);
+    $senha = addslashes($_POST['senha']);
+    
+    if (!empty($email) && !empty($senha)) {
+        $u->__construct("projeto_tcc", "localhost", "root", "");
         
-        if (!empty($nome) && !empty($senha)) {
-            $u->__construct("projeto_tcc", "localhost", "root", "");
-            
-            if ($u->msgErro == "") {
-                if ($u->logar($nome, $senha)) {
-                    // Redireciona o usuário para a página após o login
-                    header("location: ../corpo/corpo.php");
-                    exit;
-                } else {
-                    echo '<div id="msg-jacadastrado1">Nome e/ou senha estão incorretos!</div>';
-                }
+        if ($u->msgErro == "") {
+            if ($u->logar($email, $senha)) {
+                
+                header("location: ../corpo/corpo.php");
+                exit;
             } else {
-                echo '<div id="msg-jacadastrado">Erro: ' . $u->msgErro . '</div>';
+                echo '<div id="msg-jacadastrado1">E-mail e/ou senha estão incorretos!</div>'; 
             }
         } else {
-            echo '<div id="msg-jacadastrado1">Preencha todos os campos!</div>';
+            echo '<div id="msg-jacadastrado">Erro: ' . $u->msgErro . '</div>';
         }
+    } else {
+        echo '<div id="msg-jacadastrado1">Preencha todos os campos!</div>';
     }
-    ?>
+}
+?>
 </div>
  </body>
 </html>

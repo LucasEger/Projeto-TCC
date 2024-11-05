@@ -259,10 +259,11 @@ nav#menu a:hover {
 
 div#icone1{
     position: absolute;
-    top: 13px;
-    left: 1352px;
+    top: -35px;
+    left: 1300px;
     display: inline-block;
 }
+
 
 div#icone1:hover{
     -moz-box-shadow: 0 0 10px #ccc;
@@ -422,11 +423,21 @@ div#botao1{
 
 .titulo_login{
     position: absolute;
-    left: 5%;
-    top: 10%;
-    color: rgb(255, 255, 255);
-    font-family:'Verdana';
-
+    left: 48%;
+    top: 21%;
+    transform: translateX(-50%);
+    color: #FFFFFF;
+    font-family: 'Verdana', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 600;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.6); /* Fundo escuro semi-transparente */
+    padding: 15px 25px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3); /* Sombra ao redor do bloco */
+    backdrop-filter: blur(5px); /* Efeito de desfoque para destacar no background */
+    max-width: 80%; /* Limita o tamanho para evitar que o texto se expanda demais */
+    text-align: center;
 }
 
 #tabela_nova2{

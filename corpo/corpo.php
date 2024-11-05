@@ -67,17 +67,7 @@ if (!isset($_SESSION['id'])) {
                
         </nav>
 
-<?php
 
-if (isset($_SESSION['nome'])) {
-  $nomeAdmin = $_SESSION['nome'];
-  echo "<div id='nomeprodutoss'>Olá, " . htmlspecialchars($nomeAdmin) . "!</div>";
-} else {
-  echo "<div id='nomeprodutoss'>Olá, Admin!</div>";
-}
-
-
-?>
         <div id=nomeprodutos>
         <h1>Controle de Estoque</h1>
       </div>

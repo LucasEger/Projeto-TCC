@@ -72,27 +72,23 @@ Class Usuario
 
 
 
-    public function logar($nome, $senha)
+	public function logar($email, $senha)
 	{
 		global $pdo;
-		//verificar se o email e senha estao cadastrados, se sim
-		$sql = $pdo->prepare("SELECT id FROM login2 WHERE Nome = :n AND Senha = :s");
-		$sql->bindValue(":n",$nome);
-		$sql->bindValue(":s",md5($senha));
+		// Verificar se o email e senha estão cadastrados, se sim
+		$sql = $pdo->prepare("SELECT id FROM login2 WHERE email = :e AND Senha = :s");
+		$sql->bindValue(":e", $email);
+		$sql->bindValue(":s", md5($senha));
 		$sql->execute();
-		if($sql->rowCount() > 0)
-		{
-			//entrar no sistema (sessao)
+		if ($sql->rowCount() > 0) {
+			// Entrar no sistema (sessão)
 			$dado = $sql->fetch();
 			session_start();
 			$_SESSION['id'] = $dado['id'];
-			return true; //cadastrado com sucesso
+			return true; // Cadastrado com sucesso
+		} else {
+			return false; // Não foi possível logar
 		}
-		else
-		{
-			return false;//nao foi possivel logar
-		}
-
 	}
 
 	public function buscarDadosPessoa($id)
