@@ -120,7 +120,9 @@ Class Produto
 		$cmd->execute();
 		$res = $cmd->fetch(PDO::FETCH_ASSOC);
 
-		$res['validade'] = date('d/m/Y', strtotime($res['validade']));
+		if ($res && isset($res['validade'])) {
+			$res['validade'] = date('Y-m-d', strtotime($res['validade']));
+		}
 
 		return $res;
 	}
