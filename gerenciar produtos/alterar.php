@@ -22,11 +22,13 @@
     $validade = addslashes($_POST['validade']);
     $quantidade = addslashes($_POST['quantidade']);
     $peso = addslashes($_POST['peso']);
+    $preco_venda = addslashes($_POST['preco_venda']);
+    $custo = addslashes($_POST['custo']);
 
   
-    if (!empty($nome) && !empty($validade) && !empty($quantidade) && !empty($peso)) {
+    if (!empty($nome) && !empty($validade) && !empty($quantidade) && !empty($peso) && !empty($preco_venda) && !empty($custo)) {
         if ($u->msgErro == "") {
-            if ($u->atualizarDadosProduto($id, $nome, $validade, $quantidade, $peso)) {
+            if ($u->atualizarDadosProduto($id, $nome, $validade, $quantidade, $peso, $preco_venda, $custo)) {
                 ?>
                 <div id="msg-jacadastrado2">
                     Alterado com sucesso!
@@ -133,6 +135,22 @@
                 >
               </div>
             </div>
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="preco_venda">Preço de Venda</label>
+                <input type="float" name="preco_venda" class="form-control" id="preco_venda"
+                value="<?php if(isset($res)){echo $res['preco_venda'];}?>"
+                >
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="custo">Custo</label>
+                <input type="float" name="custo" class="form-control" id="custo"
+                value="<?php if(isset($res)){echo $res['custo'];}?>"
+                >
+              </div>
+            </div>
             <input id="botao" type="submit" class="btn btn-primary" value="Alterar" name="alterar">
           </form>
    
@@ -146,7 +164,11 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 
 
-        
+        <script>
+    document.getElementById('codigo_barras').addEventListener('input', function (e) {
+        this.value = this.value.replace(/\D/g, '').slice(0, 15);
+    });
+</script>
      
   </body>
 </html>

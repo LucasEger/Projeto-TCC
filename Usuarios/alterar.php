@@ -96,7 +96,7 @@ if(!isset($_SESSION['id']))
 if (isset($_GET['id_up']) && isset($_GET['delete']) && $_GET['delete'] === 'true') {
     $id_update = addslashes($_GET['id_up']);
     if (isset($_GET['confirm']) && $_GET['confirm'] === 'true') {
-        // Aqui você pode chamar o método de exclusão
+   
         $p->excluir_usuario($id_update);
         header("location: http://localhost/Projeto%20TCC/Usuarios/usuarios.php");
         exit;

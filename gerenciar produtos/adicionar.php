@@ -75,6 +75,19 @@
                 <input type="float" name="peso" class="form-control" id="inputPassword4">
               </div>
             </div>
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="inputPassword4">Preço de venda</label>
+                <input type="float" name="preco_venda" class="form-control" id="inputPassword4">
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="inputPassword4">Custo</label>
+                <input type="float" name="custo" class="form-control" id="inputPassword4">
+              </div>
+            </div>
+           
             <input id="botao" type="submit" class="btn btn-primary" value="Cadastrar" name="Cadastrar">
           </form>
    
@@ -89,76 +102,40 @@
 
 
         <?php
-      if(isset($_POST['nome']))
-      {
-          $nome = addslashes($_POST['nome']);
-          $validade = addslashes($_POST['data']);
-          $quantidade = addslashes($_POST['quantidade']);
-          $peso = addslashes($_POST['peso']);
-          $peso = str_replace(',', '.', $peso);
-          
-          
-          
-          if(!empty($nome) && !empty($validade) && !empty($quantidade) && !empty($peso))
-          {
-              $u->__construct("projeto_tcc","localhost","root","");
-              if($u->msgErro == "")
-              {
-                    if($u->cadastrar($nome, $validade, $quantidade, $peso))
-                      {
-                ?>
-                  <div id="msg-3">
-                    Cadastrado com sucesso!
-                    </div>
-                <?php
-                sleep(2); 
-                
-                
-                header("Location: http://localhost/Projeto%20TCC/gerenciar%20produtos/gerenciar.php");
-                exit; 
-                      }
-                      else
-                      {
-                ?>
-                  <div id="msg-jacadastrado">
-                    Nome já cadastrado !
-                  </div>
-                <?php
-                      }
-                
-              ?>
-                <div id="msg-conf">
-               
-                </div>
-              <?php
-                  
-              }
-              else
-              {
-            ?>
+if (isset($_POST['nome'])) {
+    $nome = addslashes($_POST['nome']);
+    $validade = addslashes($_POST['data']);
+    $quantidade = addslashes($_POST['quantidade']);
+    $peso = addslashes($_POST['peso']);
+    $preco_venda = addslashes($_POST['preco_venda']);
+    $custo = addslashes($_POST['custo']);
 
-              <div id="msg erro">
-              <?php echo"Erro: ".$u->msgErro; ?>
+   $peso = str_replace(',', '.', $peso);
+    $preco_venda = str_replace(',', '.', $preco_venda);
+    $custo = str_replace(',', '.', $custo);
+
+  
+    if (!empty($nome) && !empty($validade) && !empty($quantidade) && !empty($peso) && !empty($preco_venda) && !empty($custo)) {
+        $u->__construct("projeto_tcc", "localhost", "root", "");
+  
+        if ($u->msgErro == "") {
+            if ($u->cadastrar($nome, $validade, $quantidade, $peso, $preco_venda, $custo)) {
               
-              </div>
-            <?php
-            
-              }
-          }else
-          {
-          ?>
-          <div id="msg-3">
-            Preencha todos os campos!
-          </div>
+                $redirectUrl = "http://localhost/Projeto%20TCC/gerenciar%20produtos/gerenciar.php";
+            } 
+        } else {
+            echo "<div id='msg-erro'>Erro: " . $u->msgErro . "</div>";
+        }
+    } else {
+        echo "<div id='msg-3'>Preencha todos os campos!</div>";
+    }
 
-          <?php
-          
-          }
+    if (!empty($redirectUrl)) {
+        echo "<script>setTimeout(function() { window.location.href = '$redirectUrl'; }, 3000);</script>";
+        echo "<div id='msg-3'>Cadastrado com sucesso! Redirecionando...</div>";
+    }
+}
+?>
 
-      }
-
-      ?>
-
-     
-  </body>
+</body>
 </html>

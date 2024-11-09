@@ -6,6 +6,9 @@ if (!isset($_SESSION['id'])) {
     header("location: ../Tela Principal/inicio.php");
     exit;
 }  
+
+require_once "../classes/produtos.php";
+$p = new Produto("projeto_tcc", "localhost", "root", "");
 ?>
 
 <html lang="pt-br">
@@ -73,7 +76,32 @@ if (!isset($_SESSION['id'])) {
       </div>
         
      
-            
+      <?php
+         
+          $dados = $p->buscarDados();
+
+          $totalCusto = 0;
+          $totalVenda = 0;
+
+     
+          if (count($dados) > 0) {
+              foreach ($dados as $produto) {
+              
+                  $totalCusto += $produto['custo'] * $produto['quantidade'];
+                  $totalVenda += $produto['preco_venda'] * $produto['quantidade'];
+              }
+          }
+
+          
+          $totalCustoFormatado = number_format($totalCusto, 2, ',', '.');
+          $totalVendaFormatado = number_format($totalVenda, 2, ',', '.');
+
+          
+          echo "<div class='container-totais1'>";
+          echo "<h1 class='total-custo'>Total do custo em estoque: R$ {$totalCustoFormatado}</h1>";
+          echo "<h1 class='total-venda'>Total do valor de venda em estoque: R$ {$totalVendaFormatado}</h1>";
+          echo "</div>";
+         ?>
           
 	     
                

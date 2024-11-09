@@ -75,10 +75,10 @@ form#cadastrar {
     position: absolute;
     top: 130px;
     left: 325px;
-    font-size: 18px;
+    font-size: 16px;
     font-family: 'Roboto', Arial, sans-serif;
     background-color: #f9f9f9; 
-    padding: 20px 40px;
+    padding: 14px 26px;
     border-radius: 10px; /* Bordas suaves */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
     width: 400px;
@@ -177,19 +177,18 @@ div#msg-jacadastrado2 {
 }
 
 div#msg-jacadastrado5 {
-    left: 368px;
+    left: 357px;
     position: absolute;
-    top: 317px;
+    top: 305px;
     font-size: 15px;
 }
 
 div#msg-3 {
-    left: 370px;
+    left: 353px;
     position: absolute;
-    top: 537px;
+    top: 722px;
     font-size: 15px;
 }
-
 
 
 
@@ -362,13 +361,12 @@ tr {
 input#botao{
     background-color: darkgrey;
 }
-/*formatação dos nomes das escruturas */
 
 
 
 
 
-/*formtação de usuarios */
+
 
 div#nomeusuarios{
     position: absolute;
@@ -390,7 +388,7 @@ div#nomerelatorio {
     width: 75%;
 }
 
-/*formtação de gerenciamento de produtos */
+
 
 div#nomeprodutos {
     position: absolute;
@@ -422,7 +420,7 @@ div#botao1{
 }
 
 
-/* formatação de sair do sistema */
+
 
 .botao_sair{
     position: absolute;
@@ -443,12 +441,12 @@ div#botao1{
     font-size: 2.5rem;
     font-weight: 600;
     text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
-    background: rgba(0, 0, 0, 0.6); /* Fundo escuro semi-transparente */
+    background: rgba(0, 0, 0, 0.6); 
     padding: 15px 25px;
     border-radius: 8px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3); /* Sombra ao redor do bloco */
-    backdrop-filter: blur(5px); /* Efeito de desfoque para destacar no background */
-    max-width: 80%; /* Limita o tamanho para evitar que o texto se expanda demais */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3); 
+    backdrop-filter: blur(5px); 
+    max-width: 80%; 
     text-align: center;
 }
 
@@ -523,6 +521,59 @@ input[type="button"] {
     background-color: #ddd;
   }
 
+
+  .container-totais1 {
+    position: absolute;
+    top: 120px; 
+    left: 330px; 
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    color: #2c3e50;
+    background-color: #f9f9f9;
+    padding: 10px 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h1.total-custo1, h1.total-venda1 {
+    font-size: 20px; 
+    font-weight: 700;
+    margin: 0.5rem 0; 
+    text-align: left;
+}
+
+
+@media (min-width: 1200px) {
+    h1.total-custo1, h1.total-venda1 {
+        font-size: 24px;
+    }
+}
+
+
+.container-totais2 {
+    position: absolute;
+    top: 25px;
+    left: 717px; 
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    color: #2c3e50;
+    background-color: #f9f9f9;
+    padding: 10px 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h1.total-custo2, h1.total-venda2 {
+    font-size: 20px; 
+    font-weight: 700;
+    margin: 0.5rem 0;
+    text-align: left;
+}
+
+
+@media (min-width: 1200px) {
+    h1.total-custo2, h1.total-venda2 {
+        font-size: 20px;
+    }
+}
 
 
 

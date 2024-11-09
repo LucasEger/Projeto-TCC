@@ -6,6 +6,8 @@
            exit;
        }    
        
+       require_once "../classes/produtos.php";
+$p = new Produto("projeto_tcc", "localhost", "root", "");
 ?>
 
 
@@ -84,11 +86,42 @@
                   <th>Validade</th>
                   <th>Quantidade</th>
                   <th>Peso Kg</th>
+                  <th>Preço de venda Und</th>
+                  <th>Custo total Und</th>
+                  <th>Preço de venda total</th>
+                  <th>Custo total</th>
+
                 </tr>
 			        </thead>
 		        </table>	
       </div>
 
+      <?php
+        
+          $dados = $p->buscarDados();
+
+          $totalCusto = 0;
+          $totalVenda = 0;
+
+       
+          if (count($dados) > 0) {
+              foreach ($dados as $produto) {
+               
+                  $totalCusto += $produto['custo'] * $produto['quantidade'];
+                  $totalVenda += $produto['preco_venda'] * $produto['quantidade'];
+              }
+          }
+
+         
+          $totalCustoFormatado = number_format($totalCusto, 2, ',', '.');
+          $totalVendaFormatado = number_format($totalVenda, 2, ',', '.');
+
+         
+          echo "<div class='container-totais2'>";
+          echo "<h1 class='total-custo2'>Total do custo em estoque: R$ {$totalCustoFormatado}</h1>";
+          echo "<h1 class='total-venda2'>Total do valor de venda em estoque: R$ {$totalVendaFormatado}</h1>";
+          echo "</div>";
+         ?>
             
 
             <div class="botao_sair">

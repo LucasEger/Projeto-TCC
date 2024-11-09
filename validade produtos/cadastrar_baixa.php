@@ -46,6 +46,8 @@
                     <li><a href="../Usuarios/usuarios.php">Usuários</a></li>
                 </ul>
         </nav>
+
+        
         
       <div id=nomeprodutos>
         <h1>Cadastrar saída de estoque</h1>
@@ -139,6 +141,6 @@ if (isset($_POST['Cadastrar'])) {
 
       ?>
 
-     
+<script src="https://cdn.jsdelivr.net/npm/@zxing/library@0.18.6/dist/index.min.js"></script>
   </body>
 </html>

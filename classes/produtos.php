@@ -48,30 +48,41 @@ Class Produto
 
 
 	}
-
-    public function cadastrar($nome, $validade, $quantidade, $peso)
-    {
-    
-        global $pdo;
-		//verificar se já existe o produto cadastrado
+	public function cadastrar($nome, $validade, $quantidade, $peso, $preco_venda, $custo)
+	{
+		global $pdo;
+		
+		
 		$sql = $pdo->prepare("SELECT id FROM produtos WHERE nome = :n");
-		$sql->bindValue(":n",$nome);
+		$sql->bindValue(":n", $nome);
 		$sql->execute();
-        if($sql->rowCount() > 0)
-        {
-            return FALSE; //já está cadastradado
-        }
-        else
-        {
-            //caso não, cadastrar
-            $sql = $pdo->prepare("INSERT INTO produtos (nome, validade, quantidade, peso) VALUES (:n, :v, :q, :p)");
-            $sql->bindValue(":n",$nome);
-            $sql->bindValue(":v",$validade);
-            $sql->bindValue(":q",$quantidade);
-            $sql->bindValue(":p",$peso);
-            $sql->execute();
-            return TRUE;
-        }
+		
+		if ($sql->rowCount() > 0) {
+			return FALSE; 
+		} else {
+		
+			try {
+				$sql = $pdo->prepare("INSERT INTO produtos (nome, validade, quantidade, peso, preco_venda, custo) 
+									  VALUES (:n, :v, :q, :p, :pv, :cs)");
+
+				$sql->bindValue(":n", $nome);
+				$sql->bindValue(":v", $validade);
+				$sql->bindValue(":q", $quantidade);
+				$sql->bindValue(":p", $peso);
+				$sql->bindValue(":pv", $preco_venda);
+				$sql->bindValue(":cs", $custo);
+		
+				if ($sql->execute()) {
+					return TRUE;
+				} else {
+					throw new Exception("Erro ao executar a consulta SQL.");
+				}
+			} catch (Exception $e) {
+		
+				echo "Erro: " . $e->getMessage();
+				return FALSE;
+			}
+		}
 	}
 	
 	public function excluir_produto($id)
@@ -86,7 +97,7 @@ Class Produto
 	public function ordenar($validade)
     {
         global $pdo;
-		//verificar se já existe o email cadastrado
+		
 		$sql = $pdo->prepare("SELECT * FROM produtos order by validade asc");
 		$sql->bindValue(":v",$validade);
 		$sql->execute();
@@ -98,11 +109,11 @@ Class Produto
 
 
 
-            return FALSE; //já está cadastradado
+            return FALSE; 
         }
         else
         {
-            //caso não, cadastrar
+           
            
             return TRUE;
         }
@@ -115,7 +126,7 @@ Class Produto
 
 
 		$res = array();
-		$cmd = $pdo->prepare("SELECT nome, validade, quantidade, peso FROM produtos WHERE id = :id");
+		$cmd = $pdo->prepare("SELECT nome, validade, quantidade, peso, preco_venda, custo FROM produtos WHERE id = :id");
 		$cmd->bindValue(":id",$id);
 		$cmd->execute();
 		$res = $cmd->fetch(PDO::FETCH_ASSOC);
@@ -127,20 +138,37 @@ Class Produto
 		return $res;
 	}
 
-	public function atualizarDadosProduto($id, $nome, $validade, $quantidade, $peso)
-	{
+	public function atualizarDadosProduto($id, $nome, $validade, $quantidade, $peso, $preco_venda, $custo) {
 		global $pdo;
+	
 
 		$peso = str_replace(',', '.', $peso);
+	
+		try {
 
-		$cmd = $pdo->prepare("UPDATE produtos SET nome = :n, validade = :v, quantidade = :q, peso = :p WHERE id = :id");
+			$cmd = $pdo->prepare("UPDATE produtos SET nome = :n, validade = :v, quantidade = :q, peso = :p, preco_venda = :pv, custo = :cs WHERE id = :id");
+	
 
-		$cmd->bindValue(":n",$nome);
-		$cmd->bindValue(":v",$validade);
-		$cmd->bindValue(":q",$quantidade);
-		$cmd->bindValue(":p",$peso);
-		$cmd->bindValue(":id",$id);
-		$cmd->execute();
+			$cmd->bindValue(":n", $nome);
+			$cmd->bindValue(":v", $validade);
+			$cmd->bindValue(":q", $quantidade);
+			$cmd->bindValue(":p", $peso);
+			$cmd->bindValue(":pv", $preco_venda);
+			$cmd->bindValue(":cs", $custo);
+			$cmd->bindValue(":id", $id);
+	
+	
+			if ($cmd->execute()) {
+				echo "Dados atualizados com sucesso!";
+			} else {
+	
+				throw new Exception("Erro na execução do comando SQL: " . implode(" ", $cmd->errorInfo()));
+			}
+	
+		} catch (Exception $e) {
+
+			echo "Erro: " . $e->getMessage();
+		}
 	}
 
 

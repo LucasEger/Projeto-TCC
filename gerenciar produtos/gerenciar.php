@@ -58,32 +58,42 @@ $p = new Produto("projeto_tcc", "localhost", "root", "");
               <th>Validade</th>
               <th>Quantidade</th>
               <th>Peso Kg</th>
+              <th>Preço de Venda Unidade</th>
+              <th>Custo Unidade</th>
               <th colspan="1">Opções</th>
           </tr>
-                
           <?php
-              $dados = $p->buscarDados();
-              if (count($dados) > 0) {
-                  for ($i = 0; $i < count($dados); $i++) {
-                      ?>
-                      <tr id="conteudo">
-                      <?php
-                      foreach ($dados[$i] as $k => $v) {
-                          if ($k == 'validade') {
-                              
-                              $v = date('d/m/Y', strtotime($v));
-                          }
-                          echo "<td>" . $v . "</td>";
-                      }
-                      ?>
-                      <td id="botoes">
-                          <a id="botao_editar" href="http://localhost/Projeto%20TCC/gerenciar%20produtos/alterar.php?id_up=<?php echo $dados[$i]['id']; ?>">Editar</a>
-                      </td>
-                      <?php
-                      echo "</tr>";
-                  }
-          }
-          ?>
+$dados = $p->buscarDados();
+if (count($dados) > 0) {
+    for ($i = 0; $i < count($dados); $i++) {
+        ?>
+        <tr id="conteudo">
+        <?php
+        foreach ($dados[$i] as $k => $v) {
+        
+            if ($k == 'validade') {
+                $v = date('d/m/Y', strtotime($v));
+            }
+          
+            elseif ($k == 'custo') {
+                $v = number_format($v, 2, ',', '.');
+            }
+  
+            elseif ($k == 'preco_venda') {
+                $v = number_format($v, 2, ',', '.');
+            }
+            echo "<td>" . $v . "</td>";
+        }
+        ?>
+        <td id="botoes">
+            <a id="botao_editar" href="http://localhost/Projeto%20TCC/gerenciar%20produtos/alterar.php?id_up=<?php echo $dados[$i]['id']; ?>">Editar</a>
+        </td>
+        <?php
+        echo "</tr>";
+    }
+}
+?>
+
       </table>
       <script src="http://localhost/Projeto%20TCC/_js/paginacao.js"></script>
   </section>
